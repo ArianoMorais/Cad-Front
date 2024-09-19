@@ -1,8 +1,8 @@
 import DashboardIcon from '@mui/icons-material/Dashboard';
 import LoginIcon from '@mui/icons-material/Login';
 import ContactMailIcon from '@mui/icons-material/ContactMail';
-import EditIcon from '@mui/icons-material/Edit'; // Importe o ícone para editar
-import PersonAddIcon from '@mui/icons-material/PersonAdd'; // Ícone para o cadastro
+import EditIcon from '@mui/icons-material/Edit';
+import PersonAddIcon from '@mui/icons-material/PersonAdd';
 import { createTheme } from '@mui/material/styles';
 
 export const API_URL = 'http://localhost:5157/api';

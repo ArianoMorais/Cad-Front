@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { registerUser } from '../../services/ApiService'; // Altere conforme o serviço de registro
+import { registerUser } from '../../services/ApiService';
 import { formatCPF, formatPhoneNumber} from '../../hooks/validations';
 import { useNavigate } from 'react-router-dom';
 
@@ -22,7 +22,6 @@ export const useRegistration = () => {
     const { name, value } = e.target;
     let formattedValue = value;
 
-    // Formata o CPF e o telefone se o campo correspondente for alterado
     if (name === 'cpf') {
       formattedValue = formatCPF(value);
     } else if (name === 'phoneNumber') {

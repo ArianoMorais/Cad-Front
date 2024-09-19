@@ -1,7 +1,7 @@
 import React from 'react';
 import { Button } from '@mui/material';
 import LogoutIcon from '@mui/icons-material/Logout';
-import { useAuth } from '../context/AuthContext'; // Ajuste o caminho conforme necessário
+import { useAuth } from '../context/AuthContext';
 import { useNavigate } from 'react-router-dom';
 
 const LogoutButton = () => {
@@ -10,7 +10,7 @@ const LogoutButton = () => {
 
   const handleLogout = () => {
     logout();
-    navigate('/login'); // Redireciona para a página de login após o logout
+    navigate('/login');
   };
 
   return (
@@ -18,7 +18,7 @@ const LogoutButton = () => {
       startIcon={<LogoutIcon />}
       onClick={handleLogout}
       variant="contained"
-      sx={{ position: 'absolute',  right: 16 }} // Estilos para posicionar no canto direito
+      sx={{ position: 'absolute',  right: 16 }}
     >
       Logout
     </Button>

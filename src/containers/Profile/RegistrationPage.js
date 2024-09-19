@@ -1,11 +1,10 @@
 import React, { useEffect } from 'react';
-import { useRegistration } from '../../components/RegisterForm/hook'; // Reaproveitando o hook
-import RegisterForm from '../../components/RegisterForm/RegisterForm'; // Reaproveitando o formulário
-import FormLayout from '../../components/FormLayout'; // Reaproveitando o layout
+import { useRegistration } from '../../components/RegisterForm/hook';
+import RegisterForm from '../../components/RegisterForm/RegisterForm';
+import FormLayout from '../../components/FormLayout';
 import Alert from '@mui/material/Alert';
 import Box from '@mui/material/Box';
 
-// Componente de alerta de erro com auto fechamento
 const AutoDismissAlert = ({ message, onClose, duration }) => {
   useEffect(() => {
     const timer = setTimeout(onClose, duration);
@@ -27,7 +26,6 @@ const AutoDismissAlert = ({ message, onClose, duration }) => {
   );
 };
 
-// Página de cadastro reutilizando o hook e componentes
 const RegistrationPage = () => {
   const {
     formData,
@@ -38,7 +36,7 @@ const RegistrationPage = () => {
     handleSubmit,
     errors,
     setErrors,
-  } = useRegistration(); // Usando o mesmo hook para gerenciar o formulário
+  } = useRegistration();
 
   const handleClose = (index) => {
     setErrors((prev) => prev.filter((_, i) => i !== index));
@@ -65,8 +63,8 @@ const RegistrationPage = () => {
             flexDirection: 'column',
             alignItems: 'flex-start',
             zIndex: 1300,
-            maxWidth: '300px', // Limita a largura máxima do Box
-            width: '100%', // Ajusta a largura conforme o conteúdo
+            maxWidth: '300px',
+            width: '100%',
           }}
         >
           {errors.map((error, index) => (

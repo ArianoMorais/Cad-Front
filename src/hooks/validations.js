@@ -1,13 +1,11 @@
 import { useState } from 'react';
 
-// Função para validar CPF
 export const formatCPF = (cpf) => {
-  return cpf.replace(/\D/g, ''); // Remove caracteres não numéricos
+  return cpf.replace(/\D/g, '');
 };
 
-// Função para validar e formatar número de telefone no padrão (99) 999999999
 export const formatPhoneNumber = (phoneNumber) => {
-  const cleaned = phoneNumber.replace(/\D/g, ''); // Remove tudo que não for dígito
+  const cleaned = phoneNumber.replace(/\D/g, '');
 
   if (cleaned.length <= 2) {
     return `(${cleaned}`;
@@ -18,13 +16,11 @@ export const formatPhoneNumber = (phoneNumber) => {
   }
 };
 
-// Função para validar email simples
 export const validateEmail = (email) => {
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   return emailRegex.test(email);
 };
 
-// Hook de validação para CPF e telefone
 export const useFieldValidation = () => {
   const [errors, setErrors] = useState([]);
 

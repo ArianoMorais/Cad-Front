@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { getUserData, updateUserData } from '../../services/UserService';
-import { useAuth } from '../../context/AuthContext'; // Ajuste o caminho conforme necessário
+import { useAuth } from '../../context/AuthContext';
 import { useNavigate } from 'react-router-dom';
 
 export const useEditProfile = () => {
@@ -13,7 +13,7 @@ export const useEditProfile = () => {
     phoneNumber: '',
     addresses: [],
   });
-  const [errors, setErrors] = useState([]); // Estado para armazenar mensagens de erro
+  const [errors, setErrors] = useState([]);
 
   useEffect(() => {
     const fetchUserData = async () => {
@@ -72,7 +72,6 @@ export const useEditProfile = () => {
       console.error('Erro ao atualizar perfil', error);
       
       if (error.response && error.response.data && error.response.data.erros) {
-        // Atualiza o estado com um array de mensagens de erro
         setErrors(error.response.data.erros);
       } else {
         setErrors(['Erro ao atualizar perfil']);
@@ -88,6 +87,6 @@ export const useEditProfile = () => {
     handleRemoveAddress,
     handleSubmit,
     errors,
-    setErrors, // Inclua setErrors se você precisar definir os erros a partir do componente
+    setErrors,
   };
 };

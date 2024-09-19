@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { getUserData, updateUserData } from '../../services/ApiService';
-import { useAuth } from '../../context/AuthContext'; // Ajuste o caminho conforme necessário
+import { useAuth } from '../../context/AuthContext';
 import { formatCPF, formatPhoneNumber} from '../../hooks/validations';
 import { useNavigate } from 'react-router-dom';
 

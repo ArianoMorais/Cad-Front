@@ -21,30 +21,15 @@ const RoutesConfig = () => {
     <AuthProvider>
       <Router>
         <Routes>
-          <Route path="/" element={<Layout />}>
-            {/* Dentro do layout, rotas são renderizadas pelo Outlet */}
-            <Route index element={<HomePage />} />
+          <Route path="/" element={<Layout/>}>
+            <Route index element={<HomePage/>} />
             <Route path="login" element={<LoginPage />} />
             <Route path="register" element={<RegistrationPage />} />
-            <Route
-              path="dashboard"
-              element={
-                <PrivateRoute>
-                  <DashboardPage />
-                </PrivateRoute>
-              }
-            />
-            <Route
-              path="edit"
-              element={
-                <PrivateRoute>
-                  <EditProfilePage />
-                </PrivateRoute>
-              }
-            />
+            <Route path="dashboard" element={<PrivateRoute><DashboardPage/></PrivateRoute>}/>
+            <Route path="edit" element={<PrivateRoute><EditProfilePage /></PrivateRoute>}/>
             <Route path="contact" element={<ContactPage />} />
           </Route>
-          <Route path="*" element={<Navigate to="/" />} />
+          <Route path="*" element={<Navigate to="/"/>} />
         </Routes>
       </Router>
     </AuthProvider>
